@@ -19,6 +19,13 @@ window.onload = function () {
       storeElements.splice(elementPosition, 1);
     }
   }
+
+  function deleteListElement(element){
+    var elementPosition = listingElements.indexOf(element);
+    if (elementPosition > -1) {
+      listingElements.splice(elementPosition, 1);
+    }
+  }
  
   // updateUI берет данные из массивов и занимается вставкой
   function updateUI() {
@@ -43,6 +50,7 @@ window.onload = function () {
   // регистрируем события
   var addButton = document.querySelector('#add-button-store');
   var addButton1 = document.querySelector('#add-button-list');
+  var deleteButton = document.querySelector('#delete-button-list');
 
   addButton.onclick = function () {
     var selectedOption = document.querySelector('.listing-select option:checked');
@@ -53,6 +61,12 @@ window.onload = function () {
   addButton1.onclick = function () {
     var selectedOption = document.querySelector('.store-select option:checked');
     addToListElements(selectedOption.innerText);
+    updateUI();
+  }
+
+  deleteButton.onclick = function(){
+    var selectedOption = document.querySelector('.listing-select option:checked');
+    deleteListElement(selectedOption.innerText);
     updateUI();
   }
 };
