@@ -27,7 +27,17 @@ window.onload = function() {
   }
 
   function addElementToList(element) {
-    listingElements.push(element);
+    if (element !== "") {
+      listingElements.push(element);
+    }
+  }
+
+  function sortList(){
+    listingElements.sort();
+  }
+
+  function sortStore(){
+    storeElements.sort();
   }
 
   // updateUI берет данные из массивов и занимается вставкой
@@ -55,6 +65,8 @@ window.onload = function() {
   var addButton1 = document.querySelector("#add-button-list");
   var deleteButton = document.querySelector("#delete-button-list");
   var addElementButton = document.querySelector("#add-elemetn-list-button");
+  var sortListButton = document.querySelector("#sort-list-button");
+  var sortStoreButton = document.querySelector("#sort-store-button");
 
   addButton.onclick = function() {
     var selectedOption = document.querySelector(
@@ -79,9 +91,15 @@ window.onload = function() {
   };
   addElementButton.onclick = function() {
     var result = prompt('Введите элемент');
-    if(result !== ''){
-      addElementToList(result);
-      updateUI();
-    }
+    addElementToList(result);
+    updateUI();
   };
+  sortListButton.onclick = function() {
+    sortList();
+    updateUI();
+  }
+  sortStoreButton.onclick = function() {
+    sortStore();
+    updateUI();
+  }
 };
