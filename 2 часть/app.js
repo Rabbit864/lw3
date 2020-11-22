@@ -26,9 +26,10 @@ window.onload = function() {
     }
   }
 
-  function addElementToList(element) {
-    if (element !== "") {
-      listingElements.push(element);
+  function addElementToList() {
+    var result = prompt('Введите элемент');
+    if (result !== "") {
+      listingElements.push(result);
     }
   }
 
@@ -40,13 +41,28 @@ window.onload = function() {
     storeElements.sort();
   }
 
+  function renameListingElement(element){
+    var elementPosition = listingElements.indexOf(element);
+    var result = prompt('Введите новое имя элемента');
+    if (elementPosition > -1) {
+      listingElements[elementPosition] = result;
+    }
+  }
+
+  function renameStoreElement(element){
+    var elementPosition = storeElements.indexOf(element);
+    var result = prompt('Введите новое имя элемента');
+    if (elementPosition > -1) {
+      storeElements[elementPosition] = result;
+    }
+  }
+
   // updateUI берет данные из массивов и занимается вставкой
   function updateUI() {
     var storeSelect = document.querySelector(".store-select");
     var listingSelect = document.querySelector(".listing-select");
     storeSelect.innerHTML = "";
     listingSelect.innerHTML = "";
-    console.log(listingElements);
     for (var i = 0; i < listingElements.length; i++) {
       var newOption = document.createElement("option");
       newOption.innerText = listingElements[i];
@@ -67,6 +83,8 @@ window.onload = function() {
   var addElementButton = document.querySelector("#add-elemetn-list-button");
   var sortListButton = document.querySelector("#sort-list-button");
   var sortStoreButton = document.querySelector("#sort-store-button");
+  var renameListButton = document.querySelector("#rename-list-button");
+  var renameStoreButton = document.querySelector("#rename-store-button");
 
   addButton.onclick = function() {
     var selectedOption = document.querySelector(
@@ -90,8 +108,7 @@ window.onload = function() {
     updateUI();
   };
   addElementButton.onclick = function() {
-    var result = prompt('Введите элемент');
-    addElementToList(result);
+    addElementToList();
     updateUI();
   };
   sortListButton.onclick = function() {
@@ -100,6 +117,18 @@ window.onload = function() {
   }
   sortStoreButton.onclick = function() {
     sortStore();
+    updateUI();
+  }
+  renameListButton.onclick = function() {
+    var selectedOption = document.querySelector(
+      ".listing-select option:checked"
+    );
+    renameListingElement(selectedOption.innerText);
+    updateUI();
+  }
+  renameStoreButton.onclick = function() {
+    var selectedOption = document.querySelector(".store-select option:checked");
+    renameStoreElement(selectedOption.innerText);
     updateUI();
   }
 };
