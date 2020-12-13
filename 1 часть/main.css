@@ -1,10 +1,15 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('font/Rubik-VariableFont_wght.ttf');
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
   width: 100%;
-  max-height: 1440px;
+  max-width: 1140px;
   margin: 0 auto;
   max-height: 2500px;
 }
@@ -12,45 +17,259 @@ body {
 /* HEADER */
 .header {
   padding-top: 50px;
-  width: 100%;
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
-/* LOGO */
-.logo {
+/* HEADER-LOGO */
+.header-logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logo_text {
+.header-logo__text {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
   margin-left: 10px;
+  line-height: 24px;
 }
 
 /* NAV */
-.nav {
-  font-size: 16px;
-}
-.nav_link {
+
+.header-nav__link {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 19px;
   display: inline-block;
   margin: 0 15px;
   vertical-align: top;
   text-decoration: none;
   position: relative;
+  color: #4F5665;
+  font-size: 16px;
 }
 
 /* AUTORIZATION */
-.autoization-item {
+
+.header-autoization__item {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
   display: inline-block;
   margin: 0 25px;
   vertical-align: top;
   text-decoration: none;
   position: relative;
+  color: #0B132A;
+}
+
+/* INTRO */
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-information {
+  margin-top: 90px;
+  width: 555px;
+}
+
+.intro-information-title {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 70px;
+  margin-bottom: 20px;
+}
+
+.intro-information-subtitle {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 50px;
+  color: #4F5665;
+}
+
+.intro-information-button {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background: #F53838;
+  border-radius: 10px;
+  color: #FFFFFF;
+  padding-top: 17.5px;
+  box-shadow: 0 15px 15px rgba(245, 44, 23, 0.35);
+}
+
+/* STATISTICS */
+
+.statistics {
+  display: flex;
+  flex-flow: wrap;
+  align-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 105px
+}
+
+.statistics-item {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-content: center;
+  padding-right: 90.5px;
+  padding-left: 90.5px;
+}
+
+.statistics-item-text {
+  margin-left: 36.5px;
+}
+
+.statistics-item-text__count {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #0B132A;
+}
+
+.statistics-item-text__name {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #4F5665;
+}
+
+/* PLAN */
+
+.plan {
+  margin-top: 133px;
+}
+
+.plan-title {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50px;
+  color: #0B132A;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.plan-subtitle {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4F5665;
+  text-align: center;
+  width: 555px;
+  margin: 0 auto;
+  margin-bottom: 72px;
+}
+
+.plan-items {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.plan-items-item {
+  width: 330px;
+  height: 760px;
+  border: 2px solid #DDDDDD;
+  border-radius: 10px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-items-item__image {
+  margin: 0 auto;
+  margin-top: 79px;
+}
+
+.plan-items-item__name {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #0B132A;
+  margin-top: 30px;
+}
+
+.plan-items-item__list {
+  height: 230px;
+  margin: 0 auto;
+  margin-top: 30px;
+  list-style-image: url(img/checked.png);
+}
+
+.plan-items-item__list li {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #4F5665;
+}
+
+.plan-items-item__price {
+  margin: 0 auto;
+  margin-top: 50px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  color: #0B132A;
+}
+
+.plan-items-item__button {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 177.88px;
+  height: 45px;
+  border: 2px solid #F53838;
+  border-radius: 50px;
+  padding: 12px 62px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #F53838;
 }
