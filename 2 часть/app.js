@@ -3,82 +3,62 @@ window.onload = function() {
   var storeElements = [];
 
   // логика JS, не связана с DOM
-  function addToStoreElements(element) {
-    var elementPosition = listingElements.indexOf(element);
+  function addToCollectionElements(collectionFromDeleteElement,collectionToAddElement,element) {
+    let elementPosition = collectionFromDeleteElement.indexOf(element);
     if (elementPosition > -1) {
-      storeElements.push(element);
-      listingElements.splice(elementPosition, 1);
-    }
-  }
-
-  function addToListElements(element) {
-    var elementPosition = storeElements.indexOf(element);
-    if (elementPosition > -1) {
-      listingElements.push(element);
-      storeElements.splice(elementPosition, 1);
+      collectionToAddElement.push(element);
+      collectionFromDeleteElement.splice(elementPosition, 1);
     }
   }
 
   function deleteListElement(element) {
-    var elementPosition = listingElements.indexOf(element);
+    let elementPosition = listingElements.indexOf(element);
     if (elementPosition > -1) {
       listingElements.splice(elementPosition, 1);
     }
   }
 
   function addElementToList() {
-    var result = prompt('Введите элемент');
+    let result = prompt('Введите элемент');
     if (result !== "") {
       listingElements.push(result);
     }
   }
 
-  function sortList(){
-    listingElements.sort();
+  function sortCollection(colllection){
+    colllection.sort();
   }
 
-  function sortStore(){
-    storeElements.sort();
-  }
-
-  function renameListingElement(element){
-    var elementPosition = listingElements.indexOf(element);
-    var result = prompt('Введите новое имя элемента');
+  function renameCollectionElement(collection,element){
+    let elementPosition = collection.indexOf(element);
+    let result = prompt('Введите новое имя элемента');
     if (elementPosition > -1) {
-      listingElements[elementPosition] = result;
-    }
-  }
-
-  function renameStoreElement(element){
-    var elementPosition = storeElements.indexOf(element);
-    var result = prompt('Введите новое имя элемента');
-    if (elementPosition > -1) {
-      storeElements[elementPosition] = result;
+      collection[elementPosition] = result;
     }
   }
 
   // updateUI берет данные из массивов и занимается вставкой
   function updateUI() {
-    var storeSelect = document.querySelector(".store-select");
-    var listingSelect = document.querySelector(".listing-select");
+    let storeSelect = document.querySelector(".store-select");
+    let listingSelect = document.querySelector(".listing-select");
     storeSelect.innerHTML = "";
     listingSelect.innerHTML = "";
-    for (var i = 0; i < listingElements.length; i++) {
-      var newOption = document.createElement("option");
+    for (let i = 0; i < listingElements.length; i++) {
+      let newOption = document.createElement("option");
       newOption.innerText = listingElements[i];
       listingSelect.append(newOption);
     }
 
-    for (var i = 0; i < storeElements.length; i++) {
-      var newOption = document.createElement("option");
+    for (let i = 0; i < storeElements.length; i++) {
+      let newOption = document.createElement("option");
       newOption.innerText = storeElements[i];
       storeSelect.append(newOption);
     }
   }
 
   // регистрируем события
-  var addButton = document.querySelector("#add-button-store");
-  var addButton1 = document.querySelector("#add-button-list");
+  var moveStoreElementButton = document.querySelector("#add-button-store");
+  var moveListElementButton = document.querySelector("#add-button-list");
   var deleteButton = document.querySelector("#delete-button-list");
   var addElementButton = document.querySelector("#add-elemetn-list-button");
   var sortListButton = document.querySelector("#sort-list-button");
@@ -86,17 +66,17 @@ window.onload = function() {
   var renameListButton = document.querySelector("#rename-list-button");
   var renameStoreButton = document.querySelector("#rename-store-button");
 
-  addButton.onclick = function() {
+  moveStoreElementButton.onclick = function() {
     var selectedOption = document.querySelector(
       ".listing-select option:checked"
     );
-    addToStoreElements(selectedOption.innerText);
+    addToCollectionElements(listingElements,storeElements,selectedOption.innerText);
     updateUI();
   };
 
-  addButton1.onclick = function() {
+  moveListElementButton.onclick = function() {
     var selectedOption = document.querySelector(".store-select option:checked");
-    addToListElements(selectedOption.innerText);
+    addToCollectionElements(storeElements,listingElements,selectedOption.innerText);
     updateUI();
   };
 
@@ -112,23 +92,23 @@ window.onload = function() {
     updateUI();
   };
   sortListButton.onclick = function() {
-    sortList();
+    sortCollection(listingElements);
     updateUI();
   }
   sortStoreButton.onclick = function() {
-    sortStore();
+    sortCollection(storeElements);
     updateUI();
   }
   renameListButton.onclick = function() {
     var selectedOption = document.querySelector(
       ".listing-select option:checked"
     );
-    renameListingElement(selectedOption.innerText);
+    renameCollectionElement(listingElements,selectedOption.innerText);
     updateUI();
   }
   renameStoreButton.onclick = function() {
     var selectedOption = document.querySelector(".store-select option:checked");
-    renameStoreElement(selectedOption.innerText);
+    renameCollectionElement(storeElements,selectedOption.innerText);
     updateUI();
   }
 };
