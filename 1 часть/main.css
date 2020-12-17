@@ -1,9 +1,11 @@
 @font-face {
-  font-family: 'Rubik';
-  src: url('font/Rubik-VariableFont_wght.ttf');
+  font-family: "Rubik";
+  src: url("font/Rubik-VariableFont_wght.ttf");
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -54,7 +56,7 @@ body {
   vertical-align: top;
   text-decoration: none;
   position: relative;
-  color: #4F5665;
+  color: #4f5665;
   font-size: 16px;
 }
 
@@ -71,11 +73,11 @@ body {
   vertical-align: top;
   text-decoration: none;
   position: relative;
-  color: #0B132A;
+  color: #0b132a;
   padding: 10px;
 }
 
-.header-autoization__item--active {
+.header-autoization__item-red {
   border: 1px solid #f53855;
   color: #f53855;
   border-radius: 50px;
@@ -96,7 +98,7 @@ body {
   width: 555px;
 }
 
-.intro-information-title {
+.intro-information__title {
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
@@ -105,17 +107,17 @@ body {
   margin-bottom: 20px;
 }
 
-.intro-information-subtitle {
+.intro-information__subtitle {
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 50px;
-  color: #4F5665;
+  color: #4f5665;
 }
 
-.intro-information-button {
+.intro-information__button {
   font-family: Rubik;
   font-style: normal;
   font-weight: bold;
@@ -124,9 +126,9 @@ body {
   text-align: center;
   width: 250px;
   height: 60px;
-  background: #F53838;
+  background: #f53838;
   border-radius: 10px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding-top: 17.5px;
   box-shadow: 0 15px 15px rgba(245, 44, 23, 0.35);
 }
@@ -138,7 +140,7 @@ body {
   flex-flow: wrap;
   align-content: center;
   justify-content: space-between;
-  margin-top: 105px
+  margin-top: 105px;
 }
 
 .statistics-item {
@@ -159,7 +161,7 @@ body {
   font-weight: bold;
   font-size: 25px;
   line-height: 30px;
-  color: #0B132A;
+  color: #0b132a;
 }
 
 .statistics-item-text__name {
@@ -168,7 +170,7 @@ body {
   font-weight: normal;
   font-size: 20px;
   line-height: 30px;
-  color: #4F5665;
+  color: #4f5665;
 }
 
 /* PLAN */
@@ -177,24 +179,24 @@ body {
   margin-top: 133px;
 }
 
-.plan-title {
+.plan__title {
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
   font-size: 35px;
   line-height: 50px;
-  color: #0B132A;
+  color: #0b132a;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.plan-subtitle {
+.plan__subtitle {
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
-  color: #4F5665;
+  color: #4f5665;
   text-align: center;
   width: 555px;
   margin: 0 auto;
@@ -211,15 +213,15 @@ body {
 .plan-items-item {
   width: 330px;
   height: 760px;
-  border: 2px solid #DDDDDD;
+  border: 2px solid #dddddd;
   border-radius: 10px;
   margin-right: 50px;
   display: flex;
   flex-direction: column;
 }
 
-.plan-items-item--active {
-  border: 2px solid #F53838;
+.plan-items-item-red {
+  border: 2px solid #f53838;
 }
 
 .plan-items-item:last-child {
@@ -238,7 +240,7 @@ body {
   font-size: 18px;
   line-height: 30px;
   text-align: center;
-  color: #0B132A;
+  color: #0b132a;
   margin-top: 30px;
 }
 
@@ -255,7 +257,7 @@ body {
   font-weight: normal;
   font-size: 14px;
   line-height: 30px;
-  color: #4F5665;
+  color: #4f5665;
 }
 
 .plan-items-item__price {
@@ -267,7 +269,7 @@ body {
   font-size: 25px;
   line-height: 30px;
   text-align: center;
-  color: #0B132A;
+  color: #0b132a;
 }
 
 .plan-items-item__button {
@@ -283,10 +285,10 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  color: #F53838;
+  color: #f53838;
 }
 
-.plan-items-item__button--active {
+.plan-items-item__button-red {
   background: #f53838;
   color: #ffffff;
 }
@@ -319,7 +321,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
-  color: #4F5665;
+  color: #4f5665;
   margin-top: 20px;
   width: 340px;
 }
@@ -330,7 +332,7 @@ body {
 }
 
 .footer-information-circles__circle {
-  background: #F53838;
+  background: #f53838;
   height: 33.6px;
   width: 33.6px;
   border-radius: 70%;
@@ -343,44 +345,39 @@ body {
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
-  color: #AFB5C0;
+  color: #afb5c0;
   margin-top: 30px;
 }
 
-.footer-product {
+.footer-menu {
+  display: flex;
+}
+
+.footer-menu-list {
   margin-left: 130px;
 }
 
-.footer-engage {
-  margin-left: 126px;
-}
-
-.footer-money {
-  margin-left: 126px;
-}
-
-.footer-list__title {
+.footer-menu-list__title {
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  color: #0B132A;
+  color: #0b132a;
 }
 
-
-.footer-list {
+.footer-menu-items {
   margin-top: 20px;
   padding: 0;
   width: 130px;
 }
 
-.footer-list__item {
+.footer-menu-items__item {
   margin-bottom: 10px;
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
-  color: #4F5665;
+  color: #4f5665;
   list-style-type: none;
 }
